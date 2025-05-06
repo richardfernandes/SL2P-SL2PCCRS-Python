@@ -50,6 +50,15 @@ def make_collection_options(fc):
         "numVariables": 7,
         "exportRes": 30,
         }
+        'HLSS30': {
+        "Collection_SL2P": fc.l8_createFeatureCollection_estimates(),
+        "Collection_SL2Perrors": fc.l8_createFeatureCollection_errors(),
+        "sl2pDomain": fc.l8_createFeatureCollection_domains(),
+        "Network_Ind": fc.l8_createFeatureCollection_Network_Ind(),
+        "legend": fc.l8_createFeatureCollection_legend(),
+        "numVariables": 7,
+        "exportRes": 30,
+        }
     }
     return(COLLECTION_OPTIONS)
 
@@ -101,6 +110,15 @@ def make_net_options():
                 "inputOffset":     [0,0,0,0,0,0,0,0],
                 "outmin": 0,
                 "outmax": 0.2
+            },
+            'HLSS30': {
+                "description": 'Black sky albedo',
+                "variable": 6,
+                "inputBands":      ['cosVZA','cosSZA','cosRAA','B3', 'B4', 'B8A', 'B11', 'B12'],
+                "inputScaling":     [0.0001,.0001,.0001,1,1,1,1,1],
+                "inputOffset":     [0,0,0,0,0,0,0,0],
+                "outmin": 0,
+                "outmax": 0.2
             }
         },
         'fAPAR': {
@@ -148,7 +166,16 @@ def make_net_options():
                 "inputOffset":     [0,0,0,0,0,0,0,0],
                 "outmin": 0,
                 "outmax":1
-                }
+            },
+            'HLSS30': {
+                "description": 'Fraction of absorbed photosynthetically active radiation',
+                "variable": 2,
+                "inputBands":      ['cosVZA','cosSZA','cosRAA','B3', 'B4', 'B8A', 'B11', 'B12'],
+                "inputScaling":     [0.0001,.0001,.0001,1,1,1,1,1],
+                "inputOffset":     [0,0,0,0,0,0,0,0],
+                "outmin": 0,
+                "outmax":1
+            }
         },
         'fCOVER': {
             "S2_L2A": {
@@ -195,7 +222,16 @@ def make_net_options():
                 "inputOffset":     [0,0,0,0,0,0,0,0],
                 "outmin": 0,
                 "outmax": 1
-                }
+            },
+            'HLSS30': {
+                "description": 'Fraction of canopy cover',
+                "variable": 3,
+                "inputBands":      ['cosVZA','cosSZA','cosRAA','B3', 'B4', 'B8A', 'B11', 'B12'],
+                "inputScaling":     [0.0001,.0001,.0001,1,1,1,1,1],
+                "inputOffset":     [0,0,0,0,0,0,0,0],
+                "outmin": 0,
+                "outmax": 1
+            }
         },
         'LAI': {
             "S2_L2A": {
@@ -242,7 +278,16 @@ def make_net_options():
                 "inputOffset":     [0,0,0,0,0,0,0,0],
                 "outmin": 0,
                 "outmax": 8
-                }
+            },
+            'HLSS30': {
+                "description": 'Leaf area index',
+                "variable": 1,
+                "inputBands":      ['cosVZA','cosSZA','cosRAA','B3', 'B4', 'B8A', 'B11', 'B12'],
+                "inputScaling":     [0.0001,.0001,.0001,1,1,1,1,1],
+                "inputOffset":     [0,0,0,0,0,0,0,0],
+                "outmin": 0,
+                "outmax": 8
+            }
         },
         'CCC': {
             "S2_L2A": {
@@ -289,7 +334,17 @@ def make_net_options():
                 "inputOffset":     [0,0,0,0,0,0,0,0],
                 "outmin": 0,
                 "outmax": 600
-                }
+            },
+            'HLSS30': {
+                "description": 'Canopy chlorophyll content',
+                "variable": 4,
+                "inputBands":      ['cosVZA','cosSZA','cosRAA','B3', 'B4', 'B8A', 'B11', 'B12'],
+                "inputScaling":     [0.0001,.0001,.0001,1,1,1,1,1],
+                "inputOffset":     [0,0,0,0,0,0,0,0],
+                "outmin": 0,
+                "outmax": 600
+            }
+
         },
         'CWC': {
             "S2_L2A": {
@@ -336,7 +391,16 @@ def make_net_options():
                 "inputOffset":     [0,0,0,0,0,0,0,0],
                 "outmin": 0,
                 "outmax": 0.55
-                }
+            },
+            'HLS30': {
+                "description": 'Canopy water content',
+                "variable": 5,
+                "inputBands":      ['cosVZA','cosSZA','cosRAA','B3', 'B4', 'B8A', 'B11', 'B12'],
+                "inputScaling":     [0.0001,.0001,.0001,1,1,1,1,1],
+                "inputOffset":     [0,0,0,0,0,0,0,0],
+                "outmin": 0,
+                "outmax": 0.55
+            }
         },
     }
     return(NET_OPTIONS)
